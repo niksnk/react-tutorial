@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
-import Table from './Table'
-import Form from './Form'
-import Timer from './Timer'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import React, {Component} from 'react';
+import Table from './Table';
+import Form from './Form';
 
 
 
@@ -11,16 +8,16 @@ class App extends Component{
 
   state = {
     characters: [],
-  }
+    seconds: 5,
+  };
 
   removeCharacter = index =>{
-    const {characters} =  this.state
-
+    const {characters} =  this.state;
     this.setState({
       characters: characters.filter((character,i) =>{
-        return i !== index
+        return i !== index;
       }),
-    })
+    });
   }
 
 
@@ -29,16 +26,16 @@ class App extends Component{
 
   formClose = seconds =>{
     if (this.state.seconds <=0){
-        this.setState({seconds:30})
+        this.setState({seconds:30});
     }
   }
 
   handleSubmit = character => {
-    this.setState({characters: [...this.state.characters,character]})
+    this.setState({characters: [...this.state.characters,character]});
   }
 
   render(){
-    const { characters } = this.state
+    const { characters } = this.state;
 
     return(
       <div className="container">
@@ -52,7 +49,7 @@ class App extends Component{
       </div>
 
 
-    )
+    );
   }
 }
-export default App
+export default App;
