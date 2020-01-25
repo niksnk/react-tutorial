@@ -24,9 +24,14 @@ class App extends Component{
 
 
 
-  formClose = seconds =>{
-    if (this.state.seconds <=0){
-        this.setState({seconds:30});
+  tick =() => {
+    if (this.state.seconds <= 0){
+      this.setState({seconds:0});
+    }
+    else{
+      this.setState(state => ({
+        seconds: state.seconds - 1
+      }));
     }
   }
 
@@ -43,7 +48,9 @@ class App extends Component{
          <h4> Feel free to fill up these spaces as you see fit </h4>
 
          <Table characterData = {characters} removeCharacter = {this.removeCharacter}/>
-         <Timer/>
+          <div>
+            Form will be closed in: {this.state.seconds} second(s)
+          </div>
          <Form handleSubmit ={this.handleSubmit}/>
 
       </div>
