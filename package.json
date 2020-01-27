@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
+=======
+  "homepage": "https://niksnk.github.io/react-tutorial",
+>>>>>>> 0c741fbaa3dce79553dee4cfbb87c5a368ca71e2
   "name": "react-tutorial",
   "version": "0.1.0",
   "private": true,
